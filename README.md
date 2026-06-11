@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Treasury Alcohol Label Verification App
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a prototype developed for the Treasury Take-Home Assessment. The application helps compliance agents verify alcohol beverage labels by extracting text from uploaded label images and comparing the extracted information against application data.
+
+The goal is to reduce manual verification effort by automating common compliance checks while still allowing human review of extracted information.
+
+## Live Application
+
+https://treasury-label-verification-app-lovat.vercel.app/
+
+## Source Code Repository
+
+https://github.com/ook0ro/treasury-label-verification-app
+
+## Features
+
+* Upload alcohol label images
+* Preview uploaded label before processing
+* OCR text extraction using Tesseract.js
+* Verify Brand Name
+* Verify Class/Type Designation
+* Verify Alcohol Content
+* Verify Net Contents
+* Detect Government Warning Statement
+* Display extracted OCR text
+* Display verification results with match indicators
+
+## Technology Stack
+
+* Next.js 16
+* React
+* TypeScript
+* Tailwind CSS
+* Tesseract.js OCR
+* GitHub
+* Vercel
+
+## Application Workflow
+
+1. User enters expected application information.
+2. User uploads an alcohol label image.
+3. OCR extracts text from the image.
+4. Extracted text is normalized.
+5. The application compares extracted text against expected values.
+6. Results are displayed showing matches and missing items.
+7. Extracted OCR text is shown for manual review.
+
+## Assumptions
+
+* Uploaded images are clear and readable.
+* OCR accuracy depends on image quality.
+* The prototype performs client-side processing only.
+* No images or extracted text are permanently stored.
+* Human review remains part of the compliance process.
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the application:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Future Enhancements
 
-## Learn More
+* Batch label processing
+* Fuzzy matching for OCR errors
+* Confidence scoring
+* Support for rotated and low-quality images
+* Export verification reports
+* Integration with compliance workflow systems
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This application is intended as a proof-of-concept prototype and is not integrated with existing Treasury systems.
